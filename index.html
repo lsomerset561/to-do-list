@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="wrap">
+  <div class="header"><span>Todo List</span></div>
+  <div class="wrap-list">
+    <div class="new-area">
+      <p class="new-todo-text">Add new ToDo below</p>
+      <input type="text" class="new-todo-input" placeholder="Enter New ToDo">
+      <a href="#" class="add-btn">Add New Todo</a>
+    </div>
+    <ol class="list">
+      <li class="todo">
+        <i class="delete">x</i>
+        <input type="checkbox" id="check-1" checked="checked">
+        <label for="check-1">Shop</label>
+      </li>
+      <li class="todo">
+        <i class="delete">x</i>
+        <input type="checkbox" id="check-2">
+        <label for="check-2">Practice</label>
+      </li>
+      <li class="todo">
+        <i class="delete">x</i>
+        <input type="checkbox" id="check-3">
+        <label for="check-3">Sleep</label>
+      </li>
+      <li class="todo">
+        <i class="delete">x</i>
+        <input type="checkbox" id="check-4">
+        <label for="check-4">Enjoy life</label>
+      </li>
+      <li class="todo">
+        <i class="delete">x</i>
+        <input type="checkbox" id="check-5" checked="checked">
+        <label for="check-5">Do something</label>
+      </li>
+    </ol>
+  </div>
+
+</div>
+<!-- source html and css : http://codepen.io/DKunin/pen/FpgBs -->
+
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

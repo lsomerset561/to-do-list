@@ -1,25 +1,21 @@
-/**
- * ******** BONUS ********
+/******** BONUS ********
  * 5. Figure out a way for the user to edit the text.
- * 6. Save tasks in local storage for persistence.
- *     
+ * 6. Save tasks in local storage for persistence.     
  */
 
 var $newTodoInput = $('.new-todo-input');
 var $addBtn = $('.add-btn');
 var $list = $('.list');
-var $deleteBtn = $(".delete");
-var checkbox = '<input type="checkbox" />';
-var deleteElement = '<i class="delete">x</i>';
-var label = "<label></label>";
+var $deleteBtns = $(".delete");
+var $labels = $('label');
 
 //1. When the add-new button is clicked
 $addBtn.on("click", function() {
   //a. Check to see if the input field has text
   if ($newTodoInput.val() != 0) {
     //i. if true create a new li with the users text
-    var userInput = $(label).text($newTodoInput.val()).prepend(deleteElement);
-    var listElement = $('<li class="todo"></li>').prepend(checkbox).append(userInput);
+    var userInput = $("<label></label>").text($newTodoInput.val()).prepend('<i class="delete">x</i>');
+    var listElement = $('<li class="todo"></li>').prepend('<input type="checkbox" />').append(userInput);
     //ii. Add it to the top of the list
     $list.prepend(listElement);
     //iii. Clear input filed
@@ -29,8 +25,9 @@ $addBtn.on("click", function() {
     alert("Please enter text!");
   }
 });
+
 //2. When a user clicks the delete button
-$deleteBtn.on("click", function() {
+$deleteBtns.on("click", function() {
   //it should delete that li, with a prompt
   if (confirm("Are you sure you want to delete this item?")) {
     //BONUS 4. When user deletes to do, animate the height to 0.
@@ -44,4 +41,6 @@ $deleteBtn.on("click", function() {
   }
 });
 
+$labels.on("click", function() {
+});
 

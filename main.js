@@ -1,6 +1,4 @@
 /**
- * 3. When the user has deleted all the tasks, congratulate them in some way
- *
  * ******** BONUS ********
  *
  * 4. When user deletes to do, animate the height to 0.
@@ -38,6 +36,11 @@ $deleteBtn.on("click", function() {
   //it should delete that li, with a prompt
   if (confirm("Are you sure you want to delete this item?")) {
     $(this).parent().remove();
+    //3. When the user has deleted all the tasks, congratulate them
+    if ($list.children().length == 0) {
+      alert("Congrats on completing your list!")
+    }
   }
 });
+
 

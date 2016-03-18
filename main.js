@@ -1,7 +1,5 @@
 /**
  * ******** BONUS ********
- *
- * 
  * 5. Figure out a way for the user to edit the text.
  * 6. Save tasks in local storage for persistence.
  *     

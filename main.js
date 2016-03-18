@@ -1,7 +1,7 @@
 /**
  * ******** BONUS ********
  *
- * 4. When user deletes to do, animate the height to 0.
+ * 
  * 5. Figure out a way for the user to edit the text.
  * 6. Save tasks in local storage for persistence.
  *     
@@ -35,10 +35,13 @@ $addBtn.on("click", function() {
 $deleteBtn.on("click", function() {
   //it should delete that li, with a prompt
   if (confirm("Are you sure you want to delete this item?")) {
-    $(this).parent().remove();
+    //BONUS 4. When user deletes to do, animate the height to 0.
+    $(this).parent().animate({height: 0}, function() {
+      $(this).remove();
+    });
     //3. When the user has deleted all the tasks, congratulate them
-    if ($list.children().length == 0) {
-      alert("Congrats on completing your list!")
+    if ($list.children().length === 0) {
+      alert("Congrats on completing your list!");
     }
   }
 });

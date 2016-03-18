@@ -4,20 +4,22 @@
  */
 
 var $newTodoInput = $('.new-todo-input');
-var $addBtn = $('.add-btn');
-var $list = $('.list');
-var $deleteBtns = $(".delete");
-var $labels = $('label');
 
 //1. When the add-new button is clicked
-$addBtn.on("click", function() {
+$('.add-btn').on("click", function() {
   //a. Check to see if the input field has text
   if ($newTodoInput.val() != 0) {
     //i. if true create a new li with the users text
     var userInput = $("<label></label>").text($newTodoInput.val());
-    var listElement = $('<li class="todo"></li>').append('<i class="delete">x</i>').append(userInput).append('<input type="checkbox" />');
+    var listElement = $('<li class="todo"></li>').append(
+      '<i class="delete">x</i>',
+      '<input type="checkbox"/>', 
+      userInput, 
+      '<input type="text" />', 
+      '<i class="edit">EDIT</i>'
+    );
     //ii. Add it to the top of the list
-    $list.prepend(listElement);
+    $(".list").prepend(listElement);
     //iii. Clear input filed
     $newTodoInput.val("");
   } else {
@@ -34,13 +36,13 @@ $(".list").on("click", ".delete", function() {
     $(this).parent().animate({height: 0}, function() {
       $(this).remove();
       //3. When the user has deleted all the tasks, congratulate them
-      if ($list.children().length === 0) {
+      if ($(".list").children().length === 0) {
         alert("Congrats on completing your list!");
       }
     });
   }
 });
 
-$labels.on("click", function() {
+$('label').on("click", function() {
 });
 

@@ -14,8 +14,8 @@ $addBtn.on("click", function() {
   //a. Check to see if the input field has text
   if ($newTodoInput.val() != 0) {
     //i. if true create a new li with the users text
-    var userInput = $("<label></label>").text($newTodoInput.val()).prepend('<i class="delete">x</i>');
-    var listElement = $('<li class="todo"></li>').prepend('<input type="checkbox" />').append(userInput);
+    var userInput = $("<label></label>").text($newTodoInput.val())
+    var listElement = $('<li class="todo"></li>').append('<i class="delete">x</i>').append(userInput).append('<input type="checkbox" />');
     //ii. Add it to the top of the list
     $list.prepend(listElement);
     //iii. Clear input filed
@@ -27,7 +27,7 @@ $addBtn.on("click", function() {
 });
 
 //2. When a user clicks the delete button
-$deleteBtns.on("click", function() {
+$(".list").on("click", ".delete", function() {
   //it should delete that li, with a prompt
   if (confirm("Are you sure you want to delete this item?")) {
     //BONUS 4. When user deletes to do, animate the height to 0.

@@ -68,6 +68,7 @@ span{
 }
 
 .list input[type="text"] {
+  margin-top: 1.5px;
   border: 2px solid goldenrod;
   display: none;
   padding: 8px 10px 8px 5px;

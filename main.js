@@ -52,9 +52,11 @@ $(".list").on("click", ".edit", function() { //click 'edit'
   $(this).prevAll('.delete').toggle();
   
   if ($(this).prev('input[type="text"]').hasClass("editMode")) {
+    $(this).attr("value", "DONE");
     var oldValue = $(this).prevAll("label").text();
     $(this).prevAll('input[type="text"]').val(oldValue);
   } else {
+    $(this).attr("value", "EDIT");
     var newValue = $(this).prevAll('input[type="text"]').val();
     $(this).prevAll('label').text(newValue);
   }

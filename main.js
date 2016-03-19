@@ -1,5 +1,5 @@
 /******** BONUS ********
- * 5. Figure out a way for the user to edit the text.
+ * 
  * 6. Save tasks in local storage for persistence.     
  */
 
@@ -16,7 +16,7 @@ $('.add-btn').on("click", function() {
       '<input type="checkbox"/>', 
       userInput, 
       '<input type="text" />', 
-      '<i class="edit">EDIT</i>'
+      '<input type="submit" value="EDIT" class="edit" />'
     );
     //ii. Add it to the top of the list
     $(".list").prepend(listElement);
@@ -43,6 +43,20 @@ $(".list").on("click", ".delete", function() {
   }
 });
 
-$('label').on("click", function() {
+//BONUS 5. Figure out a way for the user to edit the text.
+$(".list").on("click", ".edit", function() { //click 'edit'
+  //text field becomes visible
+  $(this).prev('input[type="text"]').toggleClass("editMode");
+  //checkbox & delete button hidden
+  $(this).prevAll('input[type="checkbox"]').toggle();
+  $(this).prevAll('.delete').toggle();
+  
+  if ($(this).prev('input[type="text"]').hasClass("editMode")) {
+    var oldValue = $(this).prevAll("label").text();
+    $(this).prevAll('input[type="text"]').val(oldValue);
+  } else {
+    var newValue = $(this).prevAll('input[type="text"]').val();
+    $(this).prevAll('label').text(newValue);
+  }
 });
 

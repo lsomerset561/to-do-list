@@ -100,14 +100,6 @@ input[type="text"].editMode {
   display: block;
 }
 
-label.editMode {
-  display: none;
-}
-
-input[type="checkbox"].editMode {
-  display: none;
-}
-
 input[type="checkbox"]{
   cursor: pointer;
   position: relative;
